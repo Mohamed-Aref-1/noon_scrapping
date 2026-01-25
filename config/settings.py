@@ -29,8 +29,12 @@ class Config:
     ZONE_CODE: str = os.getenv('ZONE_CODE', 'AE_DXB-S14')
     ROCKET_ZONE_CODE: str = os.getenv('ROCKET_ZONE_CODE', 'W00068765A')
 
+    # Scraper Mode: BOTH (default), CATEGORY_ONLY, PRODUCTS_ONLY
+    SCRAPER_MODE: str = os.getenv('SCRAPER_MODE', 'BOTH').upper()
+
     # Scraper Settings
     BATCH_SIZE: int = int(os.getenv('BATCH_SIZE', '500'))
+    MAX_QUEUE_SIZE: int = int(os.getenv('MAX_QUEUE_SIZE', '1000'))
     REQUEST_DELAY_MIN: float = float(os.getenv('REQUEST_DELAY_MIN', '2'))
     REQUEST_DELAY_MAX: float = float(os.getenv('REQUEST_DELAY_MAX', '4'))
     REQUEST_TIMEOUT: int = int(os.getenv('REQUEST_TIMEOUT', '20'))
@@ -39,10 +43,13 @@ class Config:
     CHROME_IMPERSONATE: str = os.getenv('CHROME_IMPERSONATE', 'chrome110')
     CHROME_IMPERSONATE_DETAIL: str = os.getenv('CHROME_IMPERSONATE_DETAIL', 'chrome120')
 
-    # Output Folders
-    RAW_OUTPUT_FOLDER: str = os.getenv('RAW_OUTPUT_FOLDER', 'noon_products_scrapped_curl_cffi')
-    DEDUP_OUTPUT_FOLDER: str = os.getenv('DEDUP_OUTPUT_FOLDER', 'noon_products_scrapped_curl_cffi_dedup')
-    PRODUCT_DETAILS_FOLDER: str = os.getenv('PRODUCT_DETAILS_FOLDER', 'noon_product_details')
+    # Output Folders - Category files
+    CATEGORY_RAW_FOLDER: str = os.getenv('CATEGORY_RAW_FOLDER', 'noon_category_raw')
+    CATEGORY_DEDUP_FOLDER: str = os.getenv('CATEGORY_DEDUP_FOLDER', 'noon_category_dedup')
+
+    # Output Folders - Product details files
+    PRODUCT_RAW_FOLDER: str = os.getenv('PRODUCT_RAW_FOLDER', 'noon_product_raw')
+    PRODUCT_DEDUP_FOLDER: str = os.getenv('PRODUCT_DEDUP_FOLDER', 'noon_product_dedup')
 
     # Input/Output Files
     INPUT_CSV: str = os.getenv('INPUT_CSV', 'categories_to_scrape.csv')
@@ -104,6 +111,7 @@ class Config:
         print("\n" + "=" * 50)
         print("CURRENT CONFIGURATION")
         print("=" * 50)
+        print(f"SCRAPER_MODE: {cls.SCRAPER_MODE}")
         print(f"VISITOR_ID: {cls.VISITOR_ID}")
         print(f"VISITOR_ID_ALT: {cls.VISITOR_ID_ALT}")
         print(f"LOCALE: {cls.LOCALE}")
@@ -112,7 +120,8 @@ class Config:
         print(f"BATCH_SIZE: {cls.BATCH_SIZE}")
         print(f"REQUEST_TIMEOUT: {cls.REQUEST_TIMEOUT}s")
         print(f"DELAY: {cls.REQUEST_DELAY_MIN}-{cls.REQUEST_DELAY_MAX}s")
-        print(f"RAW_OUTPUT_FOLDER: {cls.RAW_OUTPUT_FOLDER}")
-        print(f"DEDUP_OUTPUT_FOLDER: {cls.DEDUP_OUTPUT_FOLDER}")
-        print(f"PRODUCT_DETAILS_FOLDER: {cls.PRODUCT_DETAILS_FOLDER}")
+        print(f"CATEGORY_RAW_FOLDER: {cls.CATEGORY_RAW_FOLDER}")
+        print(f"CATEGORY_DEDUP_FOLDER: {cls.CATEGORY_DEDUP_FOLDER}")
+        print(f"PRODUCT_RAW_FOLDER: {cls.PRODUCT_RAW_FOLDER}")
+        print(f"PRODUCT_DEDUP_FOLDER: {cls.PRODUCT_DEDUP_FOLDER}")
         print("=" * 50 + "\n")

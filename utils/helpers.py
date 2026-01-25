@@ -215,10 +215,12 @@ def extract_category_path_from_url(url: str) -> str:
 def ensure_directories():
     """Create output directories if they don't exist."""
     with profile_step("Creating output directories"):
-        os.makedirs(Config.RAW_OUTPUT_FOLDER, exist_ok=True)
-        os.makedirs(Config.DEDUP_OUTPUT_FOLDER, exist_ok=True)
-        os.makedirs(Config.PRODUCT_DETAILS_FOLDER, exist_ok=True)
-        logger.info(f"Output directories: {Config.RAW_OUTPUT_FOLDER}/, {Config.DEDUP_OUTPUT_FOLDER}/, {Config.PRODUCT_DETAILS_FOLDER}/")
+        os.makedirs(Config.CATEGORY_RAW_FOLDER, exist_ok=True)
+        os.makedirs(Config.CATEGORY_DEDUP_FOLDER, exist_ok=True)
+        os.makedirs(Config.PRODUCT_RAW_FOLDER, exist_ok=True)
+        os.makedirs(Config.PRODUCT_DEDUP_FOLDER, exist_ok=True)
+        logger.info(f"Category folders: {Config.CATEGORY_RAW_FOLDER}/, {Config.CATEGORY_DEDUP_FOLDER}/")
+        logger.info(f"Product folders: {Config.PRODUCT_RAW_FOLDER}/, {Config.PRODUCT_DEDUP_FOLDER}/")
 
 
 def read_categories_from_csv(csv_path: str) -> List[str]:

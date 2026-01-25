@@ -1,11 +1,21 @@
-# ignore virtual env
-myenv/
+# python
+__pycache__/
+*.pyc
 
-# ignore generated data folders
-noon_product_details/
+# logs
+*.log
+
+# data
+*.csv
+*.json
+
+# outputs
+noon_category_raw/
+noon_category_dedup/
+noon_product_raw/
+noon_product_dedup/
 noon_products_scrapped_curl_cffi/
 noon_products_scrapped_curl_cffi_dedup/
-
-# temp / lock files
-.~lock.*
-.env
+# env
+myenv/
+.venv/
