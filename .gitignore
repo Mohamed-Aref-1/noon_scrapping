@@ -1,0 +1,11 @@
+# ignore virtual env
+myenv/
+
+# ignore generated data folders
+noon_product_details/
+noon_products_scrapped_curl_cffi/
+noon_products_scrapped_curl_cffi_dedup/
+
+# temp / lock files
+.~lock.*
+.env
