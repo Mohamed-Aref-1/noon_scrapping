@@ -35,8 +35,8 @@ except ImportError:
 # CONFIGURATION
 # ============================================================================
 
-INPUT_FOLDER = "/media/mohamed/5C1C30381C300F8E/scrapping_noon_project/noon_category_dedup_all"
-OUTPUT_FOLDER = "/media/mohamed/5C1C30381C300F8E/scrapping_noon_project/product_only_3"
+INPUT_FOLDER = "/media/mohamed/5C1C30381C300F8E/scrapping_noon_project/noon_category_dedup_feb_2_1"
+OUTPUT_FOLDER = "/media/mohamed/5C1C30381C300F8E/scrapping_noon_project/product_only_feb_2_3"
 
 # API Settings
 BASE_API_URL = "https://www.noon.com/_vs/nc/mp-customer-catalog-api/api/v3/u/"
