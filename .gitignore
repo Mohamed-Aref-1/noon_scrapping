@@ -16,6 +16,25 @@ noon_product_raw/
 noon_product_dedup/
 noon_products_scrapped_curl_cffi/
 noon_products_scrapped_curl_cffi_dedup/
+noon_category_dedup_28_1/
+noon_category_dedup_all/
+noon_category_dedup_feb_2_1/
+noon_category_raw_28_1/
+noon_category_raw_all/
+noon_category_raw_feb_2_1/
+noon_product_dedup_28_1/
+noon_product_dedup_all/
+noon_product_dedup_feb_2_1/
+noon_product_raw_28_1/
+noon_product_raw_all/
+noon_product_raw_feb_2_1/
+product_only/
+product_only_3/
+product_only_3/
+noon_category_dedup_feb_2_7/
+noon_category_raw_feb_2_7/
+noon_product_dedup_feb_2_7/
+noon_product_raw_feb_2_7/
 # env
 myenv/
 .venv/
